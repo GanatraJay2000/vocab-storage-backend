@@ -6,7 +6,8 @@ const vocabSchema = new Schema({
     username: { type: String, required: true },
     word: { type: String, require: true },
     description: { type: String, require: true },
-    tags: [{type: String, require:true }],
+    tags: [{ type: String, require: true }],
+    priority: {type: Number},
 }, {
     timestamps: true,
 });

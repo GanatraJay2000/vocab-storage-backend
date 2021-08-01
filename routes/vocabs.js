@@ -12,12 +12,15 @@ router.route('/add').post((req, res) => {
   const word = req.body.word;
   const description = req.body.description;
   const tags = req.body.tags;
+  const priority = req.body.priority;
+  console.log(priority);
 
   const newVocab = new Vocab({
     username,
     word,
     description,
     tags,
+    priority,
   });
 
   newVocab.save()
@@ -44,6 +47,7 @@ router.route('/update/:id').patch((req, res) => {
         vocab.word = req.body.word;      
         vocab.description = req.body.description;
         vocab.tags = req.body.tags;      
+        vocab.priority = req.body.priority;      
 
       vocab.save()
         .then(() => res.json('Vocabulary updated!'))
